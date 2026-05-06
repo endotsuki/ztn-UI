@@ -197,9 +197,9 @@ export function DownloadControls({
                 fileInputRef.current.dispatchEvent(new Event('change', { bubbles: true }));
               }
             }}
-            className='flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-white/15 p-4 text-center transition-all hover:border-indigo-500/40 hover:bg-indigo-500/5 sm:rounded-xl sm:p-6'
+            className='group flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-white/15 p-4 text-center transition-all hover:border-indigo-500/40 hover:bg-indigo-500/5 sm:rounded-xl sm:p-6'
           >
-            <div className='flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-3'>
+            <div className='flex items-center justify-center rounded-md border border-white/10 bg-white/5 p-3 transition-all duration-300 group-hover:rounded-xl'>
               <HugeiconsIcon icon={CloudDownloadIcon} size={28} className='text-white/30' />
             </div>
             <div>
