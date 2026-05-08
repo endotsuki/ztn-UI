@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'DMSans';
+  font-family: 'DM Sans';
   src: url('/fonts/DMSans.woff2') format('woff2');
-  font-weight: 400 700;
   font-style: normal;
 }
 
 body {
-  font-family: 'DMSans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
