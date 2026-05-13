@@ -37,7 +37,7 @@ export function DownloadTable({
 
   const pills = [
     { label: 'Done', value: completed, cls: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' },
-    { label: 'Loading', value: downloading, cls: 'bg-indigo-500/15  text-indigo-400  border-indigo-500/30' },
+    { label: 'Loading', value: downloading, cls: 'bg-indigo-400/15  text-indigo-400  border-indigo-400/30' },
     { label: 'Queued', value: queued, cls: 'bg-amber-500/15   text-amber-400   border-amber-500/30' },
     { label: 'Failed', value: failed, cls: 'bg-rose-500/15    text-rose-400    border-rose-500/30' },
   ];

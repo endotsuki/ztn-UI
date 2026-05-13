@@ -38,11 +38,11 @@ export function PageHeader() {
           <button className='flex select-none items-center gap-1.5 rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-xs font-semibold text-white/60 backdrop-blur-sm transition-all hover:border-white/25 hover:bg-white/10 hover:text-white sm:text-sm'>
             <span className='hidden sm:inline'>Supported Services</span>
             <span className='sm:hidden'>Services</span>
-            <BadgeQuestionMark size={17} className='sm:size-5' />
+            <BadgeQuestionMark size={23} strokeWidth={1.5} className='text-indigo-400' />
           </button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className='mr-3 w-56 border border-white/10 bg-[#0d0f1a]/90 p-2 backdrop-blur-xl sm:w-80'>
-          <DropdownMenuLabel className='text-xs font-semibold text-white/40'>Supported Platforms</DropdownMenuLabel>
+          <DropdownMenuLabel className='text-sm font-semibold text-indigo-400'><h1>Supported Platforms</h1></DropdownMenuLabel>
           <DropdownMenuSeparator className='bg-white/10' />
           <div className='grid grid-cols-3 gap-1 p-2 sm:grid-cols-4 sm:gap-2'>
             {supportedPlatforms.map((platform) => (

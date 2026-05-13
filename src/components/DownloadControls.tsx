@@ -1,6 +1,6 @@
 import { type RefObject } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ClipboardPaste, CloudDownload, Film, Folder, Image, Music, Trash2 } from 'lucide-react';
+import { ClipboardPaste, Film, Folder, Image, Music, Trash2, Upload } from 'lucide-react';
 
 interface DownloadControlsProps {
   videoLink: string;
@@ -46,13 +46,13 @@ export function DownloadControls({
       fmt: 'video' as const,
       icon: Film,
       label: 'MP4',
-      cls: 'rounded-l-xl rounded-r-none border-r-0 border-rose-500/40 bg-rose-500/20 hover:bg-rose-500/30 text-rose-300',
+      cls: 'rounded-l-xl rounded-r-none border-r-0 border-rose-400/40 bg-rose-500/20 hover:bg-rose-400/30 text-rose-400',
     },
     {
       fmt: 'audio' as const,
       icon: Music,
       label: 'MP3',
-      cls: 'rounded-none border-x-0 border-indigo-500/40 bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300',
+      cls: 'rounded-none border-x-0 border-indigo-400/40 bg-indigo-500/20 hover:bg-indigo-400/30 text-indigo-400',
     },
     {
       fmt: 'image' as const,
@@ -78,7 +78,7 @@ export function DownloadControls({
             />
             <button
               onClick={handlePaste}
-              className='bg-white/8 hover:bg-white/12 absolute right-1.5 top-1/2 flex h-8 -translate-y-1/2 items-center gap-1.5 rounded-xl border border-white/15 px-2.5 text-xs text-white/60 transition-all hover:border-white/25 hover:text-white sm:h-9 sm:px-3 sm:text-base'
+              className='bg-indigo-400/10 hover:bg-indigo-400/5 absolute right-1.5 top-1/2 flex h-8 -translate-y-1/2 items-center gap-1.5 rounded-xl border border-indigo-400/15 px-2.5 text-xs text-indigo-400 transition-all hover:border-indigo-400/25 hover:text-indigo-500 sm:h-9 sm:px-3 sm:text-base'
             >
               <ClipboardPaste size={15} />
               <span>Paste</span>
@@ -137,7 +137,9 @@ export function DownloadControls({
                     className='flex items-center gap-1.5 font-medium'
                   >
                     <Folder size={16} className='sm:size-5' />
-                    <span className='hidden sm:inline'>Choose</span> Folder
+                    <h1 className='text-sm font-medium text-white/60 sm:text-base'>
+                      <span className='hidden sm:inline'>Choose</span> Folder
+                    </h1>
                   </motion.span>
                 )}
               </AnimatePresence>
@@ -166,7 +168,7 @@ export function DownloadControls({
           <div>
             <h1 className='text-xs font-semibold uppercase tracking-wider text-white/40 sm:text-base'>Batch Upload</h1>
             <p className='text-sm text-white/25 sm:text-base'>
-              Drop a <code className='rounded bg-white/10 px-1 py-0.5 text-white/50'>.txt</code> file with many URLs.
+              Drop a <span className='rounded font-mono bg-white/10 px-1 py-0.5 text-white/50'>.txt</span> file with many URLs.
             </p>
           </div>
           <input ref={fileInputRef} type='file' accept='.txt' className='hidden' id='batch-file' onChange={uploadList} />
@@ -187,14 +189,14 @@ export function DownloadControls({
                 fileInputRef.current.dispatchEvent(new Event('change', { bubbles: true }));
               }
             }}
-            className='group flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-white/15 p-4 text-center transition-all hover:border-indigo-500/40 hover:bg-indigo-500/5 sm:rounded-xl sm:p-6'
+            className='flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-white/15 p-4 text-center transition-all hover:border-indigo-400/50 sm:rounded-2xl sm:p-6'
           >
-            <div className='flex items-center justify-center rounded-md border border-white/10 bg-white/5 p-3 transition-all duration-300 group-hover:rounded-xl'>
-              <CloudDownload size={28} className='text-white/30' />
+            <div className='flex items-center justify-center rounded-full bg-indigo-400/10 p-4 transition-all duration-300'>
+              <Upload size={28} className='text-indigo-400' />
             </div>
             <div>
-              <h1 className='text-sm font-semibold text-white/60 sm:text-base'>Drop file here</h1>
-              <p className='text-sm text-white/25'>or click to browse</p>
+              <h1 className='text-sm font-medium text-white/60 sm:text-base'>Drop your file here, or <span className='text-indigo-400'>browse</span></h1>
+              <p className='text-sm font-light text-white/50'>or click to browse</p>
             </div>
           </label>
         </div>
